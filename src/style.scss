@@ -20,11 +20,6 @@
   z-index: 300;
 }
 $primary-orange: #ffefd5;
-// TODO:
-// 1. Create a mixin named `syrup-layer`.
-// 2. The mixin should take one parameter: $color.
-// 3. Replace the hard-coded color (#ffefd5) in the gradient with $color.
-// 4. Use @include syrup-layer(...) inside .syrup.
 @mixin syrup-layer($color) {
   background: repeating-linear-gradient(
     45deg,

@@ -77,7 +77,6 @@ function applySyrup(input: HTMLInputElement): void {
     const element = syrupElements[i] as HTMLDivElement;
     element.style.setProperty("--syrup-color", color);
   }
-  // TODO: implement this function
 }
 
 function setupSyrupListeners(): void {
@@ -93,7 +92,6 @@ function setupSyrupListeners(): void {
   if (selectedSyrupInput) {
     applySyrup(selectedSyrupInput);
   }
-  // TODO: implement this function
 }
 
 setupSyrupListeners();
@@ -112,7 +110,6 @@ function setupCreamListeners(): void {
   if (selectedCreamInput) {
     applyCream(selectedCreamInput);
   }
-  // TODO: implement this function
 }
 setupCreamListeners();
 
@@ -130,7 +127,6 @@ function setupTemperatureListeners(): void {
   if (selectedTemperatureInput) {
     applyTemperature(selectedTemperatureInput);
   }
-  // TODO: implement this function
 }
 
 setupTemperatureListeners();
@@ -149,7 +145,6 @@ function setupBaseListeners(): void {
   if (selectedBaseInput) {
     applyBase(selectedBaseInput);
   }
-  // TODO: implement this function
 }
 
 setupBaseListeners();
