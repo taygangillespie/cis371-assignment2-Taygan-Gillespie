@@ -75,7 +75,7 @@ function applySyrup(input: HTMLInputElement): void {
 
   for (let i = 0; i < syrupElements.length; i++) {
     const element = syrupElements[i] as HTMLDivElement;
-    element.style.backgroundColor = color;
+    element.style.setProperty("--syrup-color", color);
   }
   // TODO: implement this function
 }
@@ -99,17 +99,56 @@ function setupSyrupListeners(): void {
 setupSyrupListeners();
 
 function setupCreamListeners(): void {
+  const creamInputs = document.querySelectorAll<HTMLInputElement>('input[name="cream"]');
+
+  for (let x of creamInputs) {
+    x.addEventListener("change", (event) => {
+      const target = event.target as HTMLInputElement;
+      applyCream(target);
+    });
+  }
+
+  const selectedCreamInput = document.querySelector<HTMLInputElement>('input[name="cream"]:checked');
+  if (selectedCreamInput) {
+    applyCream(selectedCreamInput);
+  }
   // TODO: implement this function
 }
 setupCreamListeners();
 
 function setupTemperatureListeners(): void {
+  const temperatureInputs = document.querySelectorAll<HTMLInputElement>('input[name="temperature"]');
+
+  for (let x of temperatureInputs) {
+    x.addEventListener("change", (event) => {
+      const target = event.target as HTMLInputElement;
+      applyTemperature(target);
+    });
+  }
+
+  const selectedTemperatureInput = document.querySelector<HTMLInputElement>('input[name="temperature"]:checked');
+  if (selectedTemperatureInput) {
+    applyTemperature(selectedTemperatureInput);
+  }
   // TODO: implement this function
 }
 
 setupTemperatureListeners();
 
 function setupBaseListeners(): void {
+  const baseInputs = document.querySelectorAll<HTMLInputElement>('input[name="base"]');
+
+  for (let x of baseInputs) {
+    x.addEventListener("change", (event) => {
+      const target = event.target as HTMLInputElement;
+      applyBase(target);
+    });
+  }
+
+  const selectedBaseInput = document.querySelector<HTMLInputElement>('input[name="base"]:checked');
+  if (selectedBaseInput) {
+    applyBase(selectedBaseInput);
+  }
   // TODO: implement this function
 }
 
