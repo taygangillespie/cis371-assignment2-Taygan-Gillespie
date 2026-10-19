@@ -66,10 +66,33 @@ function applyCream(input: HTMLInputElement): void {
 }
 
 function applySyrup(input: HTMLInputElement): void {
+  const syrupElements = document.getElementsByClassName("syrup");
+
+  if (syrupElements.length === 0) return;
+
+  const color = syrups[input.value];
+  if (!color) return;
+
+  for (let i = 0; i < syrupElements.length; i++) {
+    const element = syrupElements[i] as HTMLDivElement;
+    element.style.backgroundColor = color;
+  }
   // TODO: implement this function
 }
 
 function setupSyrupListeners(): void {
+  const syrupInputs = document.querySelectorAll<HTMLInputElement>('input[name="syrup"]');
+
+  for (let x of syrupInputs) {
+    x.addEventListener("change", (event) => {
+      const target = event.target as HTMLInputElement;
+      applySyrup(target);
+    });
+  }
+  const selectedSyrupInput = document.querySelector<HTMLInputElement>('input[name="syrup"]:checked');
+  if (selectedSyrupInput) {
+    applySyrup(selectedSyrupInput);
+  }
   // TODO: implement this function
 }
 
